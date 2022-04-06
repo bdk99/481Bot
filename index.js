@@ -10,7 +10,6 @@ const { token } = require('./config.json');
 const command = require('./user_code/command')
 
 //Include rest of exported commands
-const Administrative = require("./user_code/Administrative");
 const Server = require("./user_code/Server");
 const AutoCodeBlock = require("./user_code/AutoCodeBlock");
 
@@ -49,15 +48,15 @@ client.on("message", message =>
       message.channel.send(`🏓 Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
     })
 
+    command(message, /*Message going into command function */
+    'verify', /*Command headed into command function */
+    RETURN /*Return from command method, should NOT be used in most situations */=> {
+      client.channels.cache.get(`946151295830614076`).send(`<@&930947146834935938> What have you accomplished today for the current Sprint?`); 
+    })
+
     //Halts bot with response (Activated by Brendan only!)
     command(message, 'kill', RETURN => {
       Server.kill(message);
-    })
-
-    //Deletes a specified amount of messages from the channel
-    command(message, 'clean', RETURN => {
-      var num = message.content.slice(6).trim();
-      Administrative.clean(message, num, client);
     })
 
 }); //End of message sent loop

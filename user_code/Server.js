@@ -10,7 +10,7 @@ function cronjobs(client)
       let cronjob = new cron.CronJob('00 00 1 * * *', () => {
         //CRON JOBS ARE IN UTC TIME!  EST TIME + 4 or 5 HOURS
         //DO NOT CHANGE ANYTHING IN THIS FUNCTION UNLESS YOU KNOW WHAT YOU ARE DOING! 
-        client.channels.cache.get(`946151295830614076`).send(`What have you as an individual accomplished today for the current Sprint?`); 
+        client.channels.cache.get(`946151295830614076`).send(`<@&930947146834935938> What have you as an individual accomplished today for the current Sprint?`); 
       });
 
     cronjob.start()
