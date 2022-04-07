@@ -1,4 +1,5 @@
 config.json
 package.json
 package-lock.json
-license
+node_modules
+node_modules/
