@@ -27,7 +27,8 @@ client.once('ready', () =>
 /*=======================================================================================================
   The cronjob code below Completes a cronjob task at 9 AM everyday
 //=======================================================================================================*/
-  Server.cronjobs(client)
+  //Server.cronjobs(client)
+  //This cronjob has been disabled as of 5.5.2022 as it is no longer needed to check up on people's daily progress for COSC 481W
 
 /*=======================================================================================================
    The client.on section below activates when anybody on the server sends a message on any server the bot is apart of.  
